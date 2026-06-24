@@ -51,7 +51,7 @@ window.BATTLE_DATA = (function () {
     legend:{ symbolsHeader:"圖例 Symbols", flagsHeader:"勢力旗幟 Flags",
       advance:"進攻 Advance", hq:"司令部 HQ", contact:"接敵 In contact", strength:"戰力 Strength",
       movement:"移動 Movement", combat:"交戰・火力 Combat", lost:"損失・撤退 Lost" },
-    disclaimer:"虛構戰役（機動戰士鋼彈, U.C.0079），重現於真實地形之上；賈布羅實際座標為本片之代用地點。"
+    disclaimer:"虛構戰役（機動戰士鋼彈, U.C.0079），重現於真實地形之上；片中以真實的羅賴馬山一帶代用賈布羅之位置（原作未載其座標）。"
       +"地形與影像為現今實景，與作品設定未必相符。<br>"
       +"Imagery © EOX Sentinel-2 cloudless 2016 (CC BY 4.0, s2maps.eu, modified Copernicus Sentinel data) · elevation SRTM courtesy USGS",
   };
@@ -218,13 +218,13 @@ window.BATTLE_DATA = (function () {
       title_zh:"潛伏的要塞", title_en:"The Hidden Fortress", dateLabel:"U.C. 0079.11.29",
       narration_zh:"南美的圭亞那高地。在這片台地與密林之下，藏著地球聯邦軍最大的地下司令部「賈布羅」。",
       narration_en:"The Guiana Highlands of South America. Beneath these tablelands and jungle lies Jaburo, the Earth Federation's greatest underground stronghold.",
-      side:"eff", focus:["eff_hq","eff_whitebase"], commanders:[{zh:"雷比爾 將軍",en:"Gen. Revil"}] },
+      side:"eff", focus:["eff_hq","eff_whitebase"], commanders:[{zh:"雷比爾將軍",en:"Gen. Revil"}] },
     // 2. PUNCH-IN to the gate (1500 -> 600, ~4.5 km): White Base descends, Char marks the spot.
     { day:29.4, hold:7, cam:{lng:-60.77, lat:5.11, dist:600, az:-30, el:38, orbit:0.6},
       title_zh:"白色基地入港", title_en:"White Base Descends", dateLabel:"U.C. 0079.11.29",
       narration_zh:"白色基地循密道沒入岩體。在它下方，夏亞的潛艦隊看準閘門開啟的一瞬，記下了這座要塞的位置。",
       narration_en:"White Base slips into the rock through a hidden gate. Below, Char's submarines catch the moment it opens and mark the fortress for the first time.",
-      side:"eff", focus:["eff_whitebase","eff_hq"], commanders:[{zh:"布萊德・諾亞",en:"Bright Noa"}] },
+      side:"eff", focus:["eff_whitebase","eff_hq"], commanders:[{zh:"布萊特・諾亞",en:"Bright Noa"}] },
     // 3. CLOSE low tracking up the river (~4.8 km), big az swing.
     { day:29.7, hold:8, cam:{lng:-60.83, lat:5.07, dist:650, az:-68, el:32, orbit:0.6},
       title_zh:"溯流而上", title_en:"Up the River", dateLabel:"U.C. 0079.11.29 · 夜 Night",
@@ -246,8 +246,8 @@ window.BATTLE_DATA = (function () {
     // 6. SWEEP to the far side (az 110), close (~4.6 km) on the defenders firing.
     { day:30.2, hold:9, cam:{lng:-60.77, lat:5.095, dist:620, az:110, el:40, orbit:0.9},
       title_zh:"聯邦的火網", title_en:"The Federation's Guns", dateLabel:"U.C. 0079.11.30 · 上午 Morning",
-      narration_zh:"聯邦的隱蔽光束砲台與飛行曼塔攔截機迎頭痛擊，半數以上的吉翁機體未及落地便被擊墜。",
-      narration_en:"Concealed beam batteries and Fly Manta interceptors answer hard. More than half the Zeon force is shot down before it reaches the ground.",
+      narration_zh:"聯邦的隱蔽光束砲台與飛行曼塔攔截機迎頭痛擊，大批吉翁機體未及落地便被擊墜。",
+      narration_en:"Concealed beam batteries and Fly Manta interceptors answer hard. Many of the Zeon machines never reach the ground.",
       side:"eff", focus:["eff_beam","eff_flymanta"], commanders:[] },
     // 7. TIGHT on the gate (~3.6 km): Char breaks in among the GMs.
     { day:30.35, hold:9, cam:{lng:-60.787, lat:5.10, dist:480, az:60, el:36, orbit:0.9},
@@ -278,7 +278,7 @@ window.BATTLE_DATA = (function () {
       title_zh:"聯邦的勝利", title_en:"A Federation Victory", dateLabel:"U.C. 0079.11.30 · 入夜 Nightfall",
       narration_zh:"賈布羅安然無恙，吉姆生產線完好，吉翁折損逾半。聯邦守住了要塞，卻也暴露了它的位置。日後反攻太空的艦隊，將從這座地底港啟航。",
       narration_en:"Jaburo stands intact, its GM lines unharmed, Zeon's attacking force more than halved. The Federation holds its fortress, even as its secret location is now known. From this underground port, the fleet that will retake space will one day sail.",
-      side:"eff", focus:["eff_hq","eff_gundam","eff_gm"], commanders:[{zh:"雷比爾 將軍",en:"Gen. Revil"}] },
+      side:"eff", focus:["eff_hq","eff_gundam","eff_gm"], commanders:[{zh:"雷比爾將軍",en:"Gen. Revil"}] },
   ];
 
   /* -- notes: REQUIRED. summary + caveats[] + sources. This is a fictional battle, so sources cite the

@@ -8,7 +8,7 @@ inventing lore.
 
 ```
 Fork the cinematic-3d-battle-engine to build a self-playing, TV-documentary-style 3D production of the Battle of Jaburo
-of Mobile Suit Gundam. Read PLAYBOOK.md and AGENTS.md first. Edit only the battle layer (data.js, flags.js, the
+of Mobile Suit Gundam. Read the engine's PLAYBOOK.md and AGENTS.md first. Edit only the battle layer (data.js, flags.js, the
 index.html title and social meta, and the map bounding box); never touch the engine modules.
 
 Research first and cite real sources, with no fabrication: the date window, the opposing sides with their forces and
