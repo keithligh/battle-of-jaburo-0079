@@ -15,7 +15,7 @@
 [![Three.js r128](https://img.shields.io/badge/Three.js-r128-000000)](https://threejs.org/)
 [![no build, runs offline](https://img.shields.io/badge/build-none-success)](#quick-start)
 
-[![The bundled Example Battle running out of the box: a directed camera over real Italian coastal terrain as Blue Force and Red Force clash, with captions, place labels, period flags, troop-strength readouts, the legend and the day/night timeline](docs/demo.gif)](https://keithligh.github.io/cinematic-3d-battle-engine/)
+[![The bundled Example Battle running out of the box: a fictional coastal assault on real Italian terrain, Blue Force landing from the sea and driving inland against Red Force, with captions, place labels, flags, troop-strength readouts and the legend](docs/demo.gif)](https://keithligh.github.io/cinematic-3d-battle-engine/)
 
 **▶ [Try the live demo](https://keithligh.github.io/cinematic-3d-battle-engine/)** &nbsp;·&nbsp; **🤖 [Build your own: just ask an AI](#build-your-own-just-ask-an-ai)**
 
@@ -30,8 +30,9 @@ scale, with troop movements, period flags, bilingual narration, weather, and a d
 change from one battle to the next. **Every frame is the live engine. Nothing is mocked up.** No build step, no backend,
 no API keys: one folder of static files that runs in any browser.
 
-The repo ships a small fictional **"Example Battle"** (Blue Force vs Red Force) so it plays itself the moment you clone
-it. The same engine already carries two finished documentaries end to end:
+The repo ships a **complete fictional "Example Battle"** so it plays itself the moment you clone it: a coastal assault
+where Blue Force lands from the sea and drives inland against Red Force, on the real terrain of the Italian coast. The
+same engine already carries two finished documentaries end to end:
 **[The Battle of Hong Kong, 1941](https://github.com/keithligh/battle-of-hong-kong-1941)** and
 **[D-Day: The Normandy Landings, 1944](https://github.com/keithligh/d-day-normandy-1944)**.
 
@@ -46,7 +47,7 @@ it. The same engine already carries two finished documentaries end to end:
 - 📚 **Honest by design.** `notes.sources` is a required field: the engine will not start a battle that cites no sources.
 - ⚡ **Zero infrastructure.** Static files, Three.js r128, no build step, no backend, no API keys; runs offline.
 
-> The bundled Example Battle is a deliberately bare Blue-vs-Red skeleton, the starting point you replace with your own. The finished documentaries built on the same engine ([Hong Kong](https://keithligh.github.io/battle-of-hong-kong-1941/), [D-Day](https://keithligh.github.io/d-day-normandy-1944/)) show what it renders once a real battle is described in data.
+> The Example Battle is a complete, self-contained **fictional** demo (it cites no sources because it is invented). To build your own, you do not edit it: you start from the minimal annotated skeleton `data.example.js` and follow [PLAYBOOK.md](PLAYBOOK.md). The finished documentaries on the same engine ([Hong Kong](https://keithligh.github.io/battle-of-hong-kong-1941/), [D-Day](https://keithligh.github.io/d-day-normandy-1944/)) show what it renders once a real, sourced battle is described in data.
 
 > _If this made you think "wow, AI can build that?", a ⭐ helps other people find it._
 
