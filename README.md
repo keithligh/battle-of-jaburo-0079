@@ -15,6 +15,8 @@
 [![Three.js r128](https://img.shields.io/badge/Three.js-r128-000000)](https://threejs.org/)
 [![no build, runs offline](https://img.shields.io/badge/build-none-success)](#run-it-locally)
 
+[![A self-playing 3D documentary frame: the Char vs Amuro duel at Jaburo, with the bilingual caption, the faction legend, the period emblems and the day/night timeline transport, over real Guiana-Highlands terrain](docs/demo.gif)](https://keithligh.github.io/battle-of-jaburo-0079/)
+
 **▶ [Try the live demo](https://keithligh.github.io/battle-of-jaburo-0079/)** &nbsp;·&nbsp; **📜 [Read the prompt that built it](PROMPT.md)**
 
 </div>
@@ -34,7 +36,7 @@ depicted faithfully to the established canon and openly sourced (see the
 [research brief](Research_Brief_BattleOfJaburo.md)); the geography is a disclosed real-world stand-in (see
 *Canon and accuracy* below).
 
-> Stills and a GIF capture are pending. For now, the best way to see it is the **[live demo](https://keithligh.github.io/battle-of-jaburo-0079/)** (or run it locally below and press **P** to capture your own frames).
+> Every frame above is the live engine over real elevation and satellite imagery. Geography is a **present-day, real-world stand-in** for Jaburo; see *Canon and accuracy* below.
 
 ## Highlights
 
