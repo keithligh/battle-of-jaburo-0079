@@ -1,5 +1,5 @@
 /* =====================================================================
- *  data.js — the bundled EXAMPLE BATTLE (a COMPLETE, self-contained demo).
+ *  data.js: the bundled EXAMPLE BATTLE (a COMPLETE, self-contained demo).
  *  ---------------------------------------------------------------------
  *  This is a FICTIONAL coastal assault: "Blue Force" lands from the sea and
  *  drives inland up the mountains; "Red Force" defends the high ground. It is
