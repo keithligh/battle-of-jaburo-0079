@@ -5,7 +5,7 @@
  *  imageryTex is private (only buildTerrain reads it). seaMesh / placeLabels /
  *  lineObjs / frontLabel export live for the loop + decollide.
  * ===================================================================== */
-import { CFG, D, bootMsg, smooth, clamp } from "./config.js";
+import { CFG, D, bootMsg, smooth, clamp, sameLang } from "./config.js";
 import { scene, sun, renderer } from "./core.js";
 import { lng2tx, lat2ty, tx2lng, ty2lat, lng2mx, lat2my,
          setGeo, setHeight, sampleHeightPx, vec, MAPW, MAPD, M2U } from "./projection.js";
@@ -134,7 +134,7 @@ const labelGroup=new THREE.Group(); scene.add(labelGroup);
 export const placeLabels=[];
 function addPlaceLabel(p, cls, off){
   const d=document.createElement("div"); d.className="lbl "+cls;
-  d.innerHTML=`<div class="zh">${p.name_zh}</div><div class="en">${p.name_en}</div>`;
+  d.innerHTML=`<div class="zh">${p.name_zh}</div>`+(sameLang(p.name_zh,p.name_en)?"":`<div class="en">${p.name_en}</div>`);
   const o=new THREE.CSS2DObject(d); o.position.copy(vec(p.lng,p.lat,off));
   labelGroup.add(o); placeLabels.push({o,div:d,cls});
 }
@@ -153,7 +153,7 @@ export function buildLabels(){
  * ---------------------------------------------------------------- */
 function geoCurve(path, yOff){ return new THREE.CatmullRomCurve3(path.map(p=>vec(p[0],p[1],yOff)), false, "catmullrom", 0.4); }
 function lineLabel(zh,en,color){ const d=document.createElement("div"); d.className="lbl linelbl";
-  d.innerHTML=`<div class="zh" style="color:${color}">${zh}</div><div class="en">${en}</div>`;
+  d.innerHTML=`<div class="zh" style="color:${color}">${zh}</div>`+(sameLang(zh,en)?"":`<div class="en">${en}</div>`);
   const o=new THREE.CSS2DObject(d); labelGroup.add(o); return {o,div:d}; }
 
 // one {mesh,label,fade} per defensive line declared in D.geography.lines; empty if the battle has no named line.

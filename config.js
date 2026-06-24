@@ -139,3 +139,4 @@ export const lerp=(a,b,t)=>a+(b-a)*t;
 export const smooth=(e0,e1,x)=>{ const t=clamp((x-e0)/(e1-e0||1e-6),0,1); return t*t*(3-2*t); };
 export const easeIO=t=>t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 export const deg=Math.PI/180;
+export const sameLang=(a,b)=>(""+(a??"")).trim()===(""+(b??"")).trim();   // the two language slots hold the same text → render the label/legend once, not twice (single-language battles)

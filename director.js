@@ -5,7 +5,7 @@
  *  Captions/HUD/wireUI are bidirectionally coupled to the Director, so they
  *  live together here; internal cohesion, not a cross-module cycle.
  * ===================================================================== */
-import { CFG, D, FAC, clamp, lerp, easeIO, deg, REDUCE_MOTION } from "./config.js";
+import { CFG, D, FAC, clamp, lerp, easeIO, deg, REDUCE_MOTION, sameLang } from "./config.js";
 import { camera, controls } from "./core.js";
 import { vec } from "./projection.js";
 import { Clock, setDay, lookTarget, unitById, setFocus } from "./state.js";
@@ -36,17 +36,17 @@ let lastNarr={zh:"",en:""};       // remembered so the toggle can re-render the 
 function setNarr(zh,en){ lastNarr={zh:zh||"",en:en||""};
   $("cap-narr").innerHTML = narrLang==="zh" ? `<span class="nz">${lastNarr.zh}</span>`
     : narrLang==="en" ? `<span class="ne">${lastNarr.en||lastNarr.zh}</span>`
-    : `<span class="nz">${lastNarr.zh}</span>`+(lastNarr.en?`<span class="ne">${lastNarr.en}</span>`:""); }
+    : `<span class="nz">${lastNarr.zh}</span>`+(lastNarr.en&&!sameLang(lastNarr.zh,lastNarr.en)?`<span class="ne">${lastNarr.en}</span>`:""); }
 function cycleNarrLang(){ narrLang = narrLang==="both"?"zh":narrLang==="zh"?"en":"both";
   const b=$("lang-btn"); if(b) b.textContent = D.ui.langToggle[narrLang];
   setNarr(lastNarr.zh,lastNarr.en); }
-function card(zh,en,narrZh,narrEn){ $("cap-date").textContent=""; $("cap-title").innerHTML=zh+`<span class="en">${en}</span>`;
+function card(zh,en,narrZh,narrEn){ $("cap-date").textContent=""; $("cap-title").innerHTML=zh+(sameLang(zh,en)?"":`<span class="en">${en}</span>`);
   setNarr(narrZh,narrEn); $("cap-meta").innerHTML=""; showCap(); }
 function sideStrength(sh,side){ let s=0; (sh.focus||[]).forEach(id=>{ const o=unitById[id];
   if(o&&o.u.cf&&o.u.faction===side) s+=sampleTrack(o.u.track,Clock.day).s; }); return s; }
 function setCaption(sh){
   $("cap-date").textContent=sh.dateLabel;
-  $("cap-title").innerHTML=sh.title_zh+`<span class="en">${sh.title_en}</span>`;
+  $("cap-title").innerHTML=sh.title_zh+(sameLang(sh.title_zh,sh.title_en)?"":`<span class="en">${sh.title_en}</span>`);
   setNarr(sh.narration_zh,sh.narration_en);
   let meta=(sh.commanders||[]).map(c=>`<span class="cmd">${c.zh}${c.en?(" · "+c.en):""}</span>`).join("");
   (sh.side==="both"?Object.keys(FAC):[sh.side]).forEach(sd=>{ const f=FAC[sd]; if(!f) return; const v=sideStrength(sh,sd); if(!v) return;
@@ -137,10 +137,10 @@ export function buildChrome(){
   if(key){
     const keys=Object.keys(FAC), att=keys.find(k=>FAC[k].role==="attacker")||keys[0], L=ui.legend;
     let h="";
-    for(const k of keys) h+=`<div class="row ${k}"><span class="sw"></span><span>${FAC[k].name_zh} ${FAC[k].name_en}</span></div>`;
+    for(const k of keys) h+=`<div class="row ${k}"><span class="sw"></span><span>${FAC[k].name_zh}${sameLang(FAC[k].name_zh,FAC[k].name_en)?"":" "+FAC[k].name_en}</span></div>`;
     h+=`<div class="sep"></div>`;
-    h+=`<div class="row front"><span class="ln"></span><span>${ui.frontLine.zh} ${ui.frontLine.en}</span></div>`;
-    for(const ln of (D.geography.lines||[])) h+=`<div class="row"><span class="ln" style="color:${ln.color}"></span><span>${ln.name_zh} ${ln.name_en}</span></div>`;
+    h+=`<div class="row front"><span class="ln"></span><span>${ui.frontLine.zh}${sameLang(ui.frontLine.zh,ui.frontLine.en)?"":" "+ui.frontLine.en}</span></div>`;
+    for(const ln of (D.geography.lines||[])) h+=`<div class="row"><span class="ln" style="color:${ln.color}"></span><span>${ln.name_zh}${sameLang(ln.name_zh,ln.name_en)?"":" "+ln.name_en}</span></div>`;
     h+=`<details class="syms"><summary>${L.symbolsHeader}</summary>`
      + `<div class="row"><span class="gl" style="color:var(--fac-${att})">➤</span><span>${L.advance}</span></div>`
      + `<div class="row"><span class="gl">◆</span><span>${L.hq}</span></div>`
@@ -166,7 +166,7 @@ export function wireUI(){
     const row=document.createElement("div"); row.className="row";
     const sw=document.createElement("canvas"); sw.width=24; sw.height=16; sw.className="flagsw";
     sw.getContext("2d").drawImage(flagTexture({id:"fk_"+flag,flag,faction}).image,0,0,24,16);
-    const t=document.createElement("span"); t.innerHTML=`${zh} <span class="en">${en}</span>`;
+    const t=document.createElement("span"); t.innerHTML=`${zh}`+(sameLang(zh,en)?"":` <span class="en">${en}</span>`);
     row.append(sw,t); fk.append(row); }); }
   const np=$("notes");
   $("notes-btn").onclick=()=>np.classList.toggle("open");
