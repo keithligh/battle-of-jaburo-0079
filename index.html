@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>cinematic-3d-battle-engine: a self-playing 3D battle documentary</title>
-<meta name="description" content="An open-source engine that renders any battle as a self-playing 3D documentary on real-scale satellite and elevation terrain. This page shows the bundled example (Blue Force vs Red Force); fork it to your own battle with PLAYBOOK.md." />
+<title>賈布羅戰役 The Battle of Jaburo · 機動戰士鋼彈 U.C.0079</title>
+<meta name="description" content="A self-playing, TV-documentary-style 3D production of the Battle of Jaburo (30 November U.C. 0079) from Mobile Suit Gundam, reconstructed over the real terrain of the Guiana Highlands. Bilingual Traditional Chinese and English. A fan-made, non-commercial tribute; Mobile Suit Gundam is © Sotsu, Sunrise." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="cinematic-3d-battle-engine: turn any battle into a 3D documentary" />
-<meta property="og:description" content="Self-playing 3D battle documentaries on real-scale terrain. Three.js, no build, no backend, no API keys. Fork the template to your own battle." />
-<!-- BRANDING below describes the bundled example battle (Blue Force vs Red Force). When you fork: replace the
-     title/description/og tags and the #disclaimer with your own battle's; set og:url to your deployment URL. The #credit
-     names this template's author (Keith Li); keep it as attribution. Removing it is your own manual choice. -->
-<meta property="og:url" content="https://keithligh.github.io/cinematic-3d-battle-engine/" />
-<meta property="og:image" content="https://keithligh.github.io/cinematic-3d-battle-engine/docs/og.jpg" />
+<meta property="og:title" content="賈布羅戰役 · The Battle of Jaburo (U.C. 0079)" />
+<meta property="og:description" content="Char Aznable's Zeon assault on the Earth Federation's underground fortress, a self-playing 3D documentary on real terrain. Bilingual 繁體中文 / English. A fan tribute to Mobile Suit Gundam (© Sotsu, Sunrise)." />
+<!-- BRANDING: this fork is the Battle of Jaburo (Mobile Suit Gundam, U.C.0079). The on-screen title/legend/disclaimer
+     are data-driven (data.js D.meta + D.ui); only this <head> carries the battle name. og:url points at the deploy URL.
+     The #credit names the engine author (Keith Li); kept as attribution. Mobile Suit Gundam is © Sotsu, Sunrise. -->
+<meta property="og:url" content="https://keithligh.github.io/battle-of-jaburo-0079/" />
+<meta property="og:image" content="https://keithligh.github.io/battle-of-jaburo-0079/docs/og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="The cinematic-3d-battle-engine rendering a battle on real-scale terrain" />
+<meta property="og:image:alt" content="The Battle of Jaburo rendered in 3D over the real terrain of the Guiana Highlands" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://keithligh.github.io/cinematic-3d-battle-engine/docs/og.jpg" />
+<meta name="twitter:image" content="https://keithligh.github.io/battle-of-jaburo-0079/docs/og.jpg" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%2306080c'/></svg>" /><!-- the faction-coloured favicon is rebuilt from FAC by app.js at boot -->
 <style>
   :root{
@@ -237,7 +237,7 @@
     <div id="notes-body" class="nbody"></div>
   </div>
 
-  <audio id="bgm" loop muted preload="auto"></audio><!-- optional: add src="lib/<your-track>.mp3" to enable the music control; with no src it auto-hides -->
+  <audio id="bgm" loop muted preload="auto" src="lib/jaburo_assault.mp3"></audio><!-- original score generated with Suno (paid plan); muted autoplay, click the music button to unmute -->
 
   <div id="boot">
     <div class="bt"></div>

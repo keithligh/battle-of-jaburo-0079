@@ -62,3 +62,16 @@ Source: https://s2maps.eu · https://cloudless.eox.at
 Delivered as Terrarium terrain-RGB via the AWS Open Data "Terrain Tiles" program
 (`s3://elevation-tiles-prod`). Source: https://registry.opendata.aws/terrain-tiles/
 · https://github.com/tilezen/joerd/blob/master/docs/attribution.md
+
+---
+
+## 3. Background music: `lib/jaburo_assault.mp3`
+
+> **"Jaburo Assault":** an original score generated with **Suno** (https://suno.com) under a
+> paid plan, which grants the generating user ownership / commercial-use rights to the output.
+
+This track is **original to this fan project**. It evokes the genre and mood of period anime
+battle music; it is **not** the official *Mobile Suit Gundam* soundtrack and reproduces no
+copyrighted composition from it. *Mobile Suit Gundam* itself is © Sotsu, Sunrise; this project
+is a non-commercial fan work and claims no affiliation. In the app the music is **muted on
+load** and only becomes audible after a deliberate click on the music button.
