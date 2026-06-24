@@ -8,8 +8,8 @@
  *  Mobile Suit Gundam, drawn as simple vector art:
  *    - eff  : Earth Federation: gold four-pointed compass-star above an upturned
  *             crescent (an anchor-like device), on a Federation-blue field.
- *    - zeon : Principality of Zeon: the gold "Sigil of Zeon" crest (a stylized
- *             organic sprout inside a broken spiked ring), on a red field.
+ *    - zeon : Principality of Zeon: the gold "Sigil of Zeon" crest (a central
+ *             blade flanked by upswept eagle wings, ringed), on a red field.
  *  Both emblems are FICTIONAL insignia. Neither is or resembles any real-world
  *  prohibited symbol (see Research_Brief_BattleOfJaburo.md section 6). Colours:
  *  Zeon red #C8102E + gold #F2E10E; Federation blue #2139B1 + gold #FDD000.
@@ -39,41 +39,29 @@ const flags = {
     star(c, cx, H * 0.45, H * 0.24, 4, gold);
   },
 
-  // Principality of Zeon: the gold Sigil of Zeon (organic sprout in a broken spiked ring) on red.
+  // Principality of Zeon: the gold Sigil of Zeon (a central blade flanked by upswept eagle wings, ringed) on red.
   zeon: (c) => {
     fill(c, "#C8102E");
-    const cx = W * 0.5, cy = H * 0.5, R = H * 0.40, gold = "#F2E10E";
+    const cx = W * 0.5, cy = H * 0.52, R = H * 0.42, gold = "#F2E10E";
     c.fillStyle = gold; c.strokeStyle = gold;
-    // broken spiked ring: outward thorns around a thin ring, with a gap at the bottom
-    const spikes = 12;
-    for (let i = 0; i < spikes; i++) {
-      const a = -Math.PI / 2 + i / spikes * Math.PI * 2;
-      const deg = (a * 180 / Math.PI + 360) % 360;
-      if (deg > 70 && deg < 110) continue;                 // gap at the bottom -> the ring reads "broken"
-      const tx = cx + Math.cos(a) * (R + H * 0.11), ty = cy + Math.sin(a) * (R + H * 0.11);
-      const pa = a + 0.12, pb = a - 0.12;
-      c.beginPath();
-      c.moveTo(cx + Math.cos(pa) * R, cy + Math.sin(pa) * R);
-      c.lineTo(tx, ty);
-      c.lineTo(cx + Math.cos(pb) * R, cy + Math.sin(pb) * R);
-      c.closePath(); c.fill();
-    }
-    // the thin ring itself, with a small gap at the bottom
-    c.lineWidth = 3;
-    c.beginPath(); c.arc(cx, cy, R, Math.PI * 0.5 + 0.4, Math.PI * 0.5 + Math.PI * 2 - 0.4); c.stroke();
-    // central sprout: two curved blades sweeping up and out from a common base
-    c.fillStyle = gold;
+    // clean heraldic ring (no sunburst — the canonical sigil is ringed, not a sun)
+    c.lineWidth = 3.5;
+    c.beginPath(); c.arc(cx, cy, R, 0, Math.PI * 2); c.stroke();
+    // two upswept wings, symmetric, sweeping out and up from a central base
     for (const s of [-1, 1]) {
       c.beginPath();
-      c.moveTo(cx, cy + R * 0.42);
-      c.quadraticCurveTo(cx + s * R * 0.72, cy + R * 0.05, cx + s * R * 0.44, cy - R * 0.55);
-      c.quadraticCurveTo(cx + s * R * 0.14, cy - R * 0.05, cx, cy + R * 0.10);
+      c.moveTo(cx, cy + R * 0.34);
+      c.bezierCurveTo(cx + s * R * 0.34, cy + R * 0.52,  cx + s * R * 0.95, cy + R * 0.06,  cx + s * R * 0.78, cy - R * 0.66);
+      c.bezierCurveTo(cx + s * R * 0.50, cy - R * 0.34,  cx + s * R * 0.30, cy - R * 0.04,  cx, cy + R * 0.06);
       c.closePath(); c.fill();
     }
-    // central stalk + spearhead piercing up through the top of the ring
-    c.lineWidth = 5;
-    c.beginPath(); c.moveTo(cx, cy + R * 0.50); c.lineTo(cx, cy - R * 0.42); c.stroke();
-    tri(c, cx, cy - R * 0.58, H * 0.12, gold);
+    // central spearhead (up) and body converging to a point (down): a tall vertical blade
+    c.beginPath();
+    c.moveTo(cx, cy - R * 0.82);
+    c.lineTo(cx + R * 0.17, cy - R * 0.04);
+    c.lineTo(cx, cy + R * 0.66);
+    c.lineTo(cx - R * 0.17, cy - R * 0.04);
+    c.closePath(); c.fill();
   },
 };
 
