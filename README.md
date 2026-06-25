@@ -1,6 +1,6 @@
 <div align="center">
 
-# 賈布羅戰役 · The Battle of Jaburo
+# 查布羅戰役 · The Battle of Jaburo
 
 ### A self-playing 3D documentary of Zeon's assault on the Earth Federation's hidden fortress, rendered on **real terrain** and built with an AI coding agent. A fan tribute to *Mobile Suit Gundam* (U.C. 0079).
 
