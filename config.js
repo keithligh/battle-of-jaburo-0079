@@ -68,7 +68,8 @@ const DEFAULT_UI = {
   notesBtn:"ⓘ Notes", notesHeader:"NOTES & SOURCES", resume:"▶ Resume tour",
   hint:{ autoplay:"Auto-playing", drag:"Drag to free-look (pauses the tour)" },
   legend:{ symbolsHeader:"Symbols", flagsHeader:"Flags",
-    advance:"Advance", hq:"Headquarters", contact:"In contact", strength:"Strength",
+    advance:"Advance", hq:"Headquarters", air:"Air", navy:"Naval", artillery:"Artillery",
+    contact:"In contact", strength:"Strength",
     movement:"Movement", combat:"Combat / fire", lost:"Lost / surrendered" },
   disclaimer:"Present-day satellite imagery — terrain/coastline may differ from the battle period.<br>"
     +"Imagery © EOX Sentinel-2 cloudless 2016 (CC BY 4.0, s2maps.eu, modified Copernicus Sentinel data) · elevation SRTM courtesy USGS",
@@ -96,7 +97,7 @@ const FONTS = { ...DEFAULT_FONTS, ...(D.meta.fonts||{}) };
 
 /* ========================= CONFIG ================================== */
 export const CFG = {
-  GEO: D.meta.geo,      // the battle's map box + zoom (from data.js; == tools/fetch_tiles.ps1)
+  GEO: D.meta.geo,      // the battle's map box + zoom (from data.js; == tools/fetch_tiles.mjs)
   TARGET_UNITS: 2000,   // world width of the map (height derived → to scale)
   VEXAG: 2.0,           // vertical exaggeration (Y only; XZ stays true to scale). DEFAULT before tiles; terrain.js AUTO-DERIVES
                         // it from the real relief so any-size theatre reads with sane relief (flat → more, alpine → less):
