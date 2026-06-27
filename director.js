@@ -147,12 +147,14 @@ export function buildChrome(){
     h+=`<div class="sep"></div>`;
     h+=`<div class="row front"><span class="ln"></span><span>${ui.frontLine.zh}${sameLang(ui.frontLine.zh,ui.frontLine.en)?"":" "+ui.frontLine.en}</span></div>`;
     for(const ln of (D.geography.lines||[])) h+=`<div class="row"><span class="ln" style="color:${ln.color}"></span><span>${ln.name_zh}${sameLang(ln.name_zh,ln.name_en)?"":" "+ln.name_en}</span></div>`;
+    // the arm symbols below (infantry/air/navy/artillery) MIRROR the entities.js unit glyph Shapes (wedge/aircraft/hull/gun) — keep them in sync if a glyph's shape changes
     h+=`<details class="syms"><summary>${L.symbolsHeader}</summary>`
      + `<div class="row"><span class="gl" style="color:var(--fac-${att})">➤</span><span>${L.advance}</span></div>`
      + `<div class="row"><span class="gl">◆</span><span>${L.hq}</span></div>`
-     + `<div class="row"><span class="gl"><svg viewBox="0 0 16 16" width="12" height="12" style="vertical-align:middle"><path d="M8 1.5 L13.5 14 L8 10.8 L2.5 14 Z" fill="currentColor"/></svg></span><span>${L.air}</span></div>`
-     + `<div class="row"><span class="gl"><svg viewBox="0 0 16 16" width="12" height="12" style="vertical-align:middle"><path d="M8 2.5 L12 6 V12 H4 V6 Z" fill="currentColor"/></svg></span><span>${L.navy}</span></div>`
-     + `<div class="row"><span class="gl"><svg viewBox="0 0 16 16" width="12" height="12" style="vertical-align:middle"><rect x="3.5" y="8.5" width="9" height="4.5" fill="currentColor"/><rect x="7" y="2" width="2" height="7" fill="currentColor"/></svg></span><span>${L.artillery}</span></div>`
+     + `<div class="row"><span class="gl"><svg viewBox="0 0 16 16" width="12" height="12" style="vertical-align:middle"><path d="M8 3 L11 10.75 L9.1 9.5 L8 10.4 L6.9 9.5 L5 10.75 Z" fill="currentColor"/></svg></span><span>${L.infantry}</span></div>`
+     + `<div class="row"><span class="gl"><svg viewBox="0 0 16 16" width="12" height="12" style="vertical-align:middle"><path d="M8 1.75 L8.5 7.25 L11.3 11.1 L8.6 10.5 L8.5 13.25 L7.5 13.25 L7.4 10.5 L4.7 11.1 L7.5 7.25 Z" fill="currentColor"/></svg></span><span>${L.air}</span></div>`
+     + `<div class="row"><span class="gl"><svg viewBox="0 0 16 16" width="12" height="12" style="vertical-align:middle"><path d="M8 1.25 L9.5 5.25 L9.6 12.75 L6.4 12.75 L6.5 5.25 Z" fill="currentColor"/></svg></span><span>${L.navy}</span></div>`
+     + `<div class="row"><span class="gl"><svg viewBox="0 0 16 16" width="12" height="12" style="vertical-align:middle"><path d="M8.8 0.75 L8.8 5.5 L10.6 5.5 L10.6 12.25 L5.4 12.25 L5.4 5.5 L7.2 5.5 L7.2 0.75 Z" fill="currentColor"/></svg></span><span>${L.artillery}</span></div>`
      + `<div class="row"><span class="gl">◎</span><span>${L.contact}</span></div>`
      + `<div class="row"><span class="gl mini"><i></i></span><span>${L.strength}</span></div>`
      + `<div class="row"><span class="gl">→</span><span>${L.movement}</span></div>`

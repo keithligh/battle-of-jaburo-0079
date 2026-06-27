@@ -49,7 +49,7 @@ window.BATTLE_DATA = (function () {
     notesBtn:"ⓘ 註記 Notes", notesHeader:"註記與資料來源 NOTES & SOURCES", resume:"▶ 繼續導覽 Resume",
     hint:{ autoplay:"自動播放中 Auto-playing", drag:"拖曳可自由視角（會暫停導覽）Drag to free-look" },
     legend:{ symbolsHeader:"圖例 Symbols", flagsHeader:"勢力旗幟 Flags",
-      advance:"進攻 Advance", hq:"司令部 HQ", air:"空中 Air", navy:"海上 Naval", artillery:"火砲 Artillery", contact:"接敵 In contact", strength:"戰力 Strength",
+      advance:"進攻 Advance", hq:"司令部 HQ", infantry:"機動戰士 Mobile Suit", air:"空中 Air", navy:"海上 Naval", artillery:"火砲 Artillery", contact:"接敵 In contact", strength:"戰力 Strength",
       movement:"移動 Movement", combat:"交戰・火力 Combat", lost:"損失・撤退 Lost" },
     disclaimer:"虛構戰役（機動戰士高達, U.C.0079），重現於真實地形之上；片中以真實的羅賴馬山一帶代用查布羅之位置（原作未載其座標）。"
       +"地形與影像為現今實景，與作品設定未必相符。<br>"
